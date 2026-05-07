@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\W5\Infrastucture\bin\Debug\net10.0\Infrastucture.deps.json
+C:\Users\user\Desktop\W5\Infrastucture\bin\Debug\net10.0\Infrastucture.dll
+C:\Users\user\Desktop\W5\Infrastucture\bin\Debug\net10.0\Infrastucture.pdb
+C:\Users\user\Desktop\W5\Infrastucture\bin\Debug\net10.0\Domain.dll
+C:\Users\user\Desktop\W5\Infrastucture\bin\Debug\net10.0\Domain.pdb
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.AssemblyInfo.cs
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastu.D9A2AE6E.Up2Date
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.dll
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\refint\Infrastucture.dll
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\Infrastucture.pdb
+C:\Users\user\Desktop\W5\Infrastucture\obj\Debug\net10.0\ref\Infrastucture.dll
