@@ -21,14 +21,16 @@ public class MemberService : IMemberService
         await con.ExecuteAsync(sql, member);
     }
 
-    public async Task DeleteMember(int id)
-    {
-        using var con = context.GetConnection();
+   public async Task DeleteMember(int id)
+{
+    using var con = context.GetConnection();
 
-        var sql = "delete from members where memberid = @Id";
+    var sql1 = "delete from borrowings where memberid = @Id";
+    var sql2 = "delete from members where memberid = @Id";
 
-        await con.ExecuteAsync(sql, new { Id = id });
-    }
+    await con.ExecuteAsync(sql1, new { Id = id });
+    await con.ExecuteAsync(sql2, new { Id = id });
+}
 
     public async Task<List<Member>> GetAllMembers()
     {

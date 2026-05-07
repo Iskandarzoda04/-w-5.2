@@ -40,3 +40,4 @@ C:\Users\user\Desktop\W5\WebApi\obj\Debug\net10.0\refint\WebApi.dll
 C:\Users\user\Desktop\W5\WebApi\obj\Debug\net10.0\WebApi.pdb
 C:\Users\user\Desktop\W5\WebApi\obj\Debug\net10.0\WebApi.genruntimeconfig.cache
 C:\Users\user\Desktop\W5\WebApi\obj\Debug\net10.0\ref\WebApi.dll
+C:\Users\user\Desktop\W5\WebApi\obj\Debug\net10.0\WebApi.sourcelink.json
