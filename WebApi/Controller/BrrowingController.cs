@@ -9,7 +9,14 @@ namespace WebApi.Controllers;
 [Route("api/borrowings")]
 public class BorrowingsController 
 {
-    private readonly IBorrowingService _service = new BorrowingService();
+    private readonly IBorrowingService _service;
+    private readonly ILogger<BorrowingsController> _Logger;
+
+    public BorrowingsController(IBorrowingService service, ILogger<BorrowingsController> logger)
+    {
+        _service = service;
+        _Logger = logger;
+    }
 
   
     [HttpGet]
@@ -73,4 +80,8 @@ public class BorrowingsController
     {
         return await _service.GetMembersWithBorrowings();
     }
+}
+
+internal class BrorrowingsController
+{
 }

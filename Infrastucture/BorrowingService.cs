@@ -1,120 +1,212 @@
 using Domain;
 using Dapper;
-using Npgsql;
-using System.Data;
 using Infrastructure.Interfacee;
 using Infrastructure.Date;
+using Microsoft.Extensions.Logging;
 
 namespace Infrastructure;
 
 public class BorrowingService : IBorrowingService
 {
-   public readonly DateContext context = new DateContext();
+    private readonly DateContext _context;
+    private readonly ILogger<BorrowingService> _logger;
+
+    public BorrowingService(DateContext context, ILogger<BorrowingService> logger)
+    {
+        _context = context;
+        _logger = logger;
+    }
 
     public async Task AddBorrowing(Borrowing borrowing)
     {
-        using var con = context.GetConnection();
+        _logger.LogInformation("Adding a new borrowing: BookId={BookId}, MemberId={MemberId}", 
+            borrowing.BookId, borrowing.MemberId);
+        try
+        {
+            using var con = _context.GetConnection();
+            var sql = @"insert into borrowings(bookid, memberid, borrowdate, duedate, returndate, fine)
+                        values(@BookId, @MemberId, @BorrowDate, @DueDate, @ReturnDate, @Fine)";
 
-        var sql = @"insert into borrowings(bookid, memberid, borrowdate, duedate, returndate, fine)
-                    values(@BookId, @MemberId, @BorrowDate, @DueDate, @ReturnDate, @Fine)";
+            await con.ExecuteAsync(sql, borrowing);
 
-        await con.ExecuteAsync(sql, borrowing);
+            _logger.LogInformation("Borrowing added successfully: BookId={BookId}, MemberId={MemberId}", 
+                borrowing.BookId, borrowing.MemberId);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while adding borrowing: BookId={BookId}, MemberId={MemberId}", 
+
+                borrowing.BookId, borrowing.MemberId);
+            throw;
+        }
     }
 
     public async Task DeleteBorrowing(int id)
     {
-        using var con = context.GetConnection();
+        _logger.LogInformation("Deleting borrowing: Id={Id}", id);
+        try
+        {
+            using var con = _context.GetConnection();
 
-        var sql = "delete from borrowings where borrowingid = @Id";
+            var sql = "delete from borrowings where borrowingid = @Id";
 
-        await con.ExecuteAsync(sql, new { Id = id });
+            await con.ExecuteAsync(sql, new { Id = id });
+
+            _logger.LogInformation("Borrowing deleted successfully: Id={Id}", id);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while deleting borrowing: Id={Id}", id);
+            throw;
+        }
     }
 
     public async Task<List<Borrowing>> GetAllBorrowings()
     {
-        using var con = context.GetConnection();
+        _logger.LogInformation("GetAllBorrowings started");
+        try
+        {
+            using var con = _context.GetConnection();
 
-        var sql = "select * from borrowings";
+            var sql = "select * from borrowings";
 
-         var br = con.Query<Borrowing>(sql).ToList();
-        
-         return br;
+            var br = con.Query<Borrowing>(sql).ToList();
+
+            _logger.LogInformation("GetAllBorrowings: {Count} borrowings found", br.Count);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while retrieving all borrowings");
+            throw;
+        }
     }
 
     public async Task<Borrowing?> GetBorrowingById(int id)
     {
-        using var con = context.GetConnection();
+        _logger.LogInformation("GetBorrowingById started: Id={Id}", id);
+        try
+        {
+            using var con = _context.GetConnection();
 
-        var sql = "select * from borrowings where borrowingid = @Id";
+            var sql = "select * from borrowings where borrowingid = @Id"
+            ;
+            var br = await con.QuerySingleOrDefaultAsync<Borrowing>(sql, new { Id = id });
 
-        var br = await con.QuerySingleOrDefaultAsync<Borrowing>(sql, new { Id = id });
-        return br;
+            if (br == null)
+                _logger.LogWarning("Borrowing not found: Id={Id}", id);
+            else
+                _logger.LogInformation("Borrowing found: Id={Id}", id);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while retrieving borrowing: Id={Id}", id);
+            throw;
+        }
     }
 
     public async Task UpdateBorrowing(Borrowing borrowing)
     {
-        using var con = context.GetConnection();
+        _logger.LogInformation("Updating borrowing: Id={Id}", borrowing.BorrowingId);
+        try
+        {
+            using var con = _context.GetConnection();
+            var sql = @"update borrowings
+                        set bookid = @BookId,
+                            memberid = @MemberId,
+                            borrowdate = @BorrowDate,
+                            duedate = @DueDate,
+                            returndate = @ReturnDate,
+                            fine = @Fine
+                        where borrowingid = @BorrowingId";
+            await con.ExecuteAsync(sql, borrowing);
 
-        var sql = @"update borrowings
-                    set bookid = @BookId,
-                        memberid = @MemberId,
-                        borrowdate = @BorrowDate,
-                        duedate = @DueDate,
-                        returndate = @ReturnDate,
-                        fine = @Fine
-                    where borrowingid = @BorrowingId";
-
-        await con.ExecuteAsync(sql, borrowing);
+            _logger.LogInformation("Borrowing updated successfully: Id={Id}", borrowing.BorrowingId);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while updating borrowing: Id={Id}", borrowing.BorrowingId);
+            throw;
+        }
     }
 
-  public async Task<int> GetTotalBorrowedBooks()
+    public async Task<int> GetTotalBorrowedBooks()
+    {
+        _logger.LogInformation("GetTotalBorrowedBooks started");
+        try
+        {
+            using var con = _context.GetConnection();
 
-   {
-    using var con = context.GetConnection();
+            var sql = "select count(*) from borrowings";
 
-    var sql = "select count(*) from borrowings";
+            var br = await con.ExecuteScalarAsync<int>(sql);
 
-    var br = await con.ExecuteScalarAsync<int>(sql);
-
-    return br;
-
+            _logger.LogInformation("GetTotalBorrowedBooks: {Count} total borrowed books", br);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while total borrowed books");
+            throw;
+        }
     }
 
     public async Task<decimal> GetAverageFine()
-
     {
-    using var con = context.GetConnection();
+        _logger.LogInformation("GetAverageFine started");
+        try
+        {
+            using var con = _context.GetConnection();
+            var sql = "select avg(fine) from borrowings";
+            var br = await con.ExecuteScalarAsync<decimal>(sql);
+            _logger.LogInformation("GetAverageFine: average fine = {Fine}", br);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while retrieving average fine");
+            throw;
+        }
+    }
 
-    var sql = "select avg(fine) from borrowings";
+    public async Task<List<dynamic>> GetNotReturnedBooks()
+    {
+        _logger.LogInformation("GetNotReturnedBooks started");
+        try
+        {
+            using var con = _context.GetConnection();
+            var sql = @"select b.title, m.fullname
+                        from borrowings br
+                        join books b on br.bookid = b.bookid
+                        join members m on br.memberid = m.memberid
+                        where br.returndate is null";
+            var br = (await con.QueryAsync(sql)).ToList();
+            _logger.LogInformation("GetNotReturnedBooks: {Count} not returned books found", br.Count);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while retrieving not returned books");
+            throw;
+        }
+    }
 
-    var br = await con.ExecuteScalarAsync<decimal>(sql);
-
-    return br;
-   }
-
-   public async Task<List<dynamic>> GetNotReturnedBooks()
-{
-    using var con = context.GetConnection();
-
-    var sql = @"select b.title, m.fullname
-                from borrowings br
-                join books b on br.bookid = b.bookid
-                join members m on br.memberid = m.memberid
-                where br.returndate is null";
-
-    var br =(await con.QueryAsync(sql)).ToList();
- 
-    return br;
-}
-
-public async Task<int> GetMembersWithBorrowings()
-{
-    using var con = context.GetConnection();
-
-    var sql = @"select count(memberid)
-                from borrowings";
-
-    return await con.ExecuteScalarAsync<int>(sql);
-}
-  
+    public async Task<int> GetMembersWithBorrowings()
+    {
+        _logger.LogInformation("GetMembersWithBorrowings started");
+        try
+        {
+            using var con = _context.GetConnection();
+            var sql = "select count(memberid) from borrowings";
+            var br = await con.ExecuteScalarAsync<int>(sql);
+            _logger.LogInformation("GetMembersWithBorrowings: {Count} members with borrowings", br);
+            return br;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while retrieving members with borrowings");
+            throw;
+        }
+    }
 }

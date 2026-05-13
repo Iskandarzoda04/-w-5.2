@@ -9,8 +9,14 @@ namespace WebApi.Controller;
 [Route("api/members")]
 public class MembersController 
 {
-     public readonly IMemberService _memberService = new MemberService();
-  
+     public readonly IMemberService _memberService;
+     public ILogger<MembersController> _logger;
+     public MembersController(IMemberService memberService, ILogger<MembersController> logger)
+     {
+         _memberService = memberService;
+         _logger = logger;
+     }
+
     [HttpGet]
     public async Task<List<Member>> Get()
     {

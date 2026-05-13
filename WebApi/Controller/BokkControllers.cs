@@ -9,7 +9,11 @@ namespace WebApi.Controllers;
 [Route("api/books")]
 public class BooksController 
 {
-    private readonly IBookService _bookService = new BookService();
+    private readonly IBookService _bookService;
+    public BooksController(IBookService bookService)
+    {
+        _bookService = bookService;
+    }
 
     [HttpGet]
     public async Task<List<Book>> Get()
@@ -40,4 +44,8 @@ public class BooksController
     {
         await _bookService.DeleteBook(id);
     }
+}
+
+internal class p
+{
 }

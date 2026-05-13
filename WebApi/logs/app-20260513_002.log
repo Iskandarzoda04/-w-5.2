@@ -1,0 +1,184 @@
+2026-05-13 14:24:03.395 +05:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5222: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт).
+ ---> System.Net.Sockets.SocketException (10048): Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт).
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-05-13 14:25:22.836 +05:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5222: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт).
+ ---> System.Net.Sockets.SocketException (10048): Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт).
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2026-05-13 14:27:13.175 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:27:13.200 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:27:13.200 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:27:13.200 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:27:47.616 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:27:47.673 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:27:47.673 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:27:47.673 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:29:00.248 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:29:00.276 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:29:00.276 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:29:00.276 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:29:44.276 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:29:44.300 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:29:44.300 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:29:44.300 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:30:21.758 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:30:21.789 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:30:21.789 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:30:21.789 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:53:39.398 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:53:39.446 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:53:39.448 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:53:39.449 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:54:01.885 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger - null null
+2026-05-13 14:54:02.098 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger - 301 0 null 220.3412ms
+2026-05-13 14:54:02.176 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.html - null null
+2026-05-13 14:54:02.379 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.html - 200 null text/html;charset=utf-8 205.9833ms
+2026-05-13 14:54:02.442 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui.css - null null
+2026-05-13 14:54:02.480 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-bundle.js - null null
+2026-05-13 14:54:02.480 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.css - null null
+2026-05-13 14:54:02.481 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-13 14:54:02.486 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.js - null null
+2026-05-13 14:54:02.595 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui.css - 200 26479 text/css 153.4344ms
+2026-05-13 14:54:02.646 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-bundle.js - 200 418181 text/javascript 165.9507ms
+2026-05-13 14:54:02.657 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.css - 200 152 text/css 177.2014ms
+2026-05-13 14:54:02.688 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-standalone-preset.js - 200 76613 text/javascript 207.6056ms
+2026-05-13 14:54:02.733 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.js - 200 null application/javascript;charset=utf-8 246.6869ms
+2026-05-13 14:54:02.933 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - null null
+2026-05-13 14:54:02.965 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/favicon-32x32.png - null null
+2026-05-13 14:54:03.156 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/favicon-32x32.png - 200 628 image/png 191.2093ms
+2026-05-13 14:54:03.394 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 461.8672ms
+2026-05-13 14:54:10.491 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/api/books - null null
+2026-05-13 14:54:10.541 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-05-13 14:54:10.557 +05:00 [INF] Executing endpoint 'WebApi.Controllers.BooksController.Get (WebApi)'
+2026-05-13 14:54:10.672 +05:00 [INF] Route matched with {action = "Get", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Book]] Get() on controller WebApi.Controllers.BooksController (WebApi).
+2026-05-13 14:54:11.974 +05:00 [INF] GetAllBooks started
+2026-05-13 14:54:12.735 +05:00 [ERR] GetAllBooks 30 books found
+2026-05-13 14:54:12.751 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Book, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-13 14:54:12.811 +05:00 [INF] Executed action WebApi.Controllers.BooksController.Get (WebApi) in 2125.8961ms
+2026-05-13 14:54:12.816 +05:00 [INF] Executed endpoint 'WebApi.Controllers.BooksController.Get (WebApi)'
+2026-05-13 14:54:12.826 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/api/books - 200 null application/json; charset=utf-8 2334.1386ms
+2026-05-13 14:54:39.179 +05:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5223/api/books/1 - null null
+2026-05-13 14:54:39.199 +05:00 [INF] Executing endpoint 'WebApi.Controllers.BooksController.DeleteAsync (WebApi)'
+2026-05-13 14:54:39.269 +05:00 [INF] Route matched with {action = "Delete", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task DeleteAsync(Int32) on controller WebApi.Controllers.BooksController (WebApi).
+2026-05-13 14:54:39.350 +05:00 [INF] Deleting book with id: id=1
+2026-05-13 14:54:39.483 +05:00 [ERR] Error  while deleting book: id=1
+2026-05-13 14:54:39.496 +05:00 [INF] Executed action WebApi.Controllers.BooksController.DeleteAsync (WebApi) in 212.7109ms
+2026-05-13 14:54:39.504 +05:00 [INF] Executed endpoint 'WebApi.Controllers.BooksController.DeleteAsync (WebApi)'
+2026-05-13 14:54:39.517 +05:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 23503: UPDATE или DELETE в таблице "books" нарушает ограничение внешнего ключа "borrowings_bookid_fkey" таблицы "borrowings"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 663
+   at Infrastructure.BookService.DeleteBook(Int32 id) in C:\Users\user\Desktop\-w-5.2\Infrastucture\BookService.cs:line 62
+   at WebApi.Controllers.BooksController.DeleteAsync(Int32 id) in C:\Users\user\Desktop\-w-5.2\WebApi\Controller\BokkControllers.cs:line 45
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+  Exception data:
+    Severity: ОШИБКА
+    SqlState: 23503
+    MessageText: UPDATE или DELETE в таблице "books" нарушает ограничение внешнего ключа "borrowings_bookid_fkey" таблицы "borrowings"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: borrowings
+    ConstraintName: borrowings_bookid_fkey
+    File: ri_triggers.c
+    Line: 2811
+    Routine: ri_ReportViolation
+2026-05-13 14:54:39.709 +05:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5223/api/books/1 - 500 null text/plain; charset=utf-8 530.4875ms
+2026-05-13 14:54:45.643 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/api/borrowings - null null
+2026-05-13 14:54:45.658 +05:00 [INF] Executing endpoint 'WebApi.Controllers.BorrowingsController.Get (WebApi)'
+2026-05-13 14:54:45.691 +05:00 [INF] Route matched with {action = "Get", controller = "Borrowings"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Borrowing]] Get() on controller WebApi.Controllers.BorrowingsController (WebApi).
+2026-05-13 14:54:45.727 +05:00 [INF] GetAllBorrowings started
+2026-05-13 14:54:45.765 +05:00 [INF] GetAllBorrowings: 31 borrowings found
+2026-05-13 14:54:45.770 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Borrowing, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-13 14:54:45.879 +05:00 [INF] Executed action WebApi.Controllers.BorrowingsController.Get (WebApi) in 161.2318ms
+2026-05-13 14:54:45.917 +05:00 [INF] Executed endpoint 'WebApi.Controllers.BorrowingsController.Get (WebApi)'
+2026-05-13 14:54:45.921 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/api/borrowings - 200 null application/json; charset=utf-8 278.5874ms
+2026-05-13 14:59:21.013 +05:00 [INF] Application is shutting down...
+2026-05-13 14:59:31.764 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 14:59:31.812 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:59:31.814 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:59:31.815 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 14:59:51.271 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.html - null null
+2026-05-13 14:59:51.696 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.html - 304 null null 430.1488ms
+2026-05-13 14:59:51.838 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui.css - null null
+2026-05-13 14:59:51.845 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.css - null null
+2026-05-13 14:59:51.845 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-13 14:59:51.846 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-bundle.js - null null
+2026-05-13 14:59:51.850 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/index.js - null null
+2026-05-13 14:59:51.963 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui.css - 304 null null 127.4518ms
+2026-05-13 14:59:51.963 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.css - 304 null null 118.7163ms
+2026-05-13 14:59:51.963 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-standalone-preset.js - 304 null null 118.2919ms
+2026-05-13 14:59:52.031 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/swagger-ui-bundle.js - 304 null null 185.1584ms
+2026-05-13 14:59:52.044 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/index.js - 304 null null 194.2196ms
+2026-05-13 14:59:52.582 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - null null
+2026-05-13 14:59:52.946 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5223/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 368.1059ms
+2026-05-13 15:00:21.624 +05:00 [INF] Application is shutting down...
+2026-05-13 15:00:26.402 +05:00 [INF] Now listening on: http://localhost:5223
+2026-05-13 15:00:26.428 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 15:00:26.430 +05:00 [INF] Hosting environment: Development
+2026-05-13 15:00:26.430 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\WebApi
+2026-05-13 15:02:39.717 +05:00 [INF] Application is shutting down...

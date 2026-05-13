@@ -10,6 +10,6 @@ public interface IBookService
     Task DeleteBook(int id);
     Task<Book?> GetBookById(int id);
     Task<List<Book>> GetAllBooks();
-    Task GetMostPopularBook();
+    Task<dynamic> GetMostPopularBook();
 
 }

@@ -1,0 +1,58 @@
+2026-05-13 12:47:19.844 +05:00 [INF] Now listening on: http://localhost:5221
+2026-05-13 12:47:19.900 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 12:47:19.903 +05:00 [INF] Hosting environment: Development
+2026-05-13 12:47:19.907 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\webApi
+2026-05-13 12:47:33.356 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.html - null null
+2026-05-13 12:47:34.066 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.html - 304 null null 711.1864ms
+2026-05-13 12:47:34.226 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-bundle.js - null null
+2026-05-13 12:47:34.226 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-13 12:47:34.226 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.css - null null
+2026-05-13 12:47:34.237 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.js - null null
+2026-05-13 12:47:34.246 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui.css - null null
+2026-05-13 12:47:34.589 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-standalone-preset.js - 304 null null 364.9752ms
+2026-05-13 12:47:34.590 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-bundle.js - 304 null null 368.0106ms
+2026-05-13 12:47:34.629 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.css - 304 null null 406.56ms
+2026-05-13 12:47:34.658 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.js - 304 null null 420.0833ms
+2026-05-13 12:47:34.696 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui.css - 304 null null 447.7294ms
+2026-05-13 12:47:35.038 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/v1/swagger.json - null null
+2026-05-13 12:47:35.846 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 807.8922ms
+2026-05-13 12:47:40.859 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/api/books - null null
+2026-05-13 12:47:40.877 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-05-13 12:47:40.888 +05:00 [INF] Executing endpoint 'WebApi.Controllers.BooksController.Get (WebApi)'
+2026-05-13 12:47:40.951 +05:00 [INF] Route matched with {action = "Get", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Book]] Get() on controller WebApi.Controllers.BooksController (WebApi).
+2026-05-13 12:47:42.715 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Book, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-13 12:47:42.754 +05:00 [INF] Executed action WebApi.Controllers.BooksController.Get (WebApi) in 1789.615ms
+2026-05-13 12:47:42.758 +05:00 [INF] Executed endpoint 'WebApi.Controllers.BooksController.Get (WebApi)'
+2026-05-13 12:47:42.762 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/api/books - 200 null application/json; charset=utf-8 1903.6099ms
+2026-05-13 14:16:29.692 +05:00 [INF] Application is shutting down...
+2026-05-13 14:16:43.435 +05:00 [INF] Now listening on: http://localhost:5221
+2026-05-13 14:16:43.488 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:16:43.490 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:16:43.491 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\webApi
+2026-05-13 14:17:53.261 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.html - null null
+2026-05-13 14:17:53.501 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.html - 304 null null 242.868ms
+2026-05-13 14:17:53.557 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui.css - null null
+2026-05-13 14:17:53.595 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-bundle.js - null null
+2026-05-13 14:17:53.595 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.css - null null
+2026-05-13 14:17:53.595 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-standalone-preset.js - null null
+2026-05-13 14:17:53.599 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/index.js - null null
+2026-05-13 14:17:53.669 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-bundle.js - 304 null null 73.3136ms
+2026-05-13 14:17:53.669 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui.css - 304 null null 114.1106ms
+2026-05-13 14:17:53.680 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.css - 304 null null 84.8848ms
+2026-05-13 14:17:53.713 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/swagger-ui-standalone-preset.js - 304 null null 118.0449ms
+2026-05-13 14:17:53.739 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/index.js - 304 null null 140.3704ms
+2026-05-13 14:17:53.861 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/swagger/v1/swagger.json - null null
+2026-05-13 14:17:54.172 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 310.9072ms
+2026-05-13 14:18:13.739 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5221/api/borrowings - null null
+2026-05-13 14:18:13.778 +05:00 [WRN] Failed to determine the https port for redirect.
+2026-05-13 14:18:13.798 +05:00 [INF] Executing endpoint 'WebApi.Controllers.BorrowingsController.Get (WebApi)'
+2026-05-13 14:18:13.886 +05:00 [INF] Route matched with {action = "Get", controller = "Borrowings"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[Domain.Borrowing]] Get() on controller WebApi.Controllers.BorrowingsController (WebApi).
+2026-05-13 14:18:14.528 +05:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Borrowing, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-13 14:18:14.596 +05:00 [INF] Executed action WebApi.Controllers.BorrowingsController.Get (WebApi) in 670.5526ms
+2026-05-13 14:18:14.605 +05:00 [INF] Executed endpoint 'WebApi.Controllers.BorrowingsController.Get (WebApi)'
+2026-05-13 14:18:14.618 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5221/api/borrowings - 200 null application/json; charset=utf-8 878.962ms
+2026-05-13 14:21:17.792 +05:00 [INF] Application is shutting down...
+2026-05-13 14:21:23.372 +05:00 [INF] Now listening on: http://localhost:5221
+2026-05-13 14:21:23.399 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-13 14:21:23.401 +05:00 [INF] Hosting environment: Development
+2026-05-13 14:21:23.402 +05:00 [INF] Content root path: C:\Users\user\Desktop\-w-5.2\webApi
